@@ -8,8 +8,8 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
 </head>
+
 <style type="text/css">
     body {
         font-size: 15px;
@@ -34,6 +34,7 @@
 </style>
 <body>
     <h2>${msg }</h2>
-    <input type="button" value="返    回" onclick="history.go(-1)" />
+    <%--<input type="button" value="返    回" onclick="history.go(-1)" />--%>
+    <input type="button" value="返    回" onclick="location.href='/yosebook-ssm/admin/order/findAll.do'" />
 </body>
 </html>

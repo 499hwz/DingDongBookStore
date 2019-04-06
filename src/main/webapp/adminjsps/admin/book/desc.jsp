@@ -173,7 +173,7 @@ function delForm(){
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input onclick="editForm()" type="button" name="method" id="editBtn" class="btn" value="编　　辑">
+					<input onclick="editForm()" type="button" name="method" id="editBtn" class="btn" value="修　　改">
 					<input onclick="delForm()" type="button" name="method" id="delBtn" class="btn" value="删　　除">
 				</td>
 				<td></td>

@@ -120,7 +120,7 @@ footer p {
     <p>管理员登录</p>
     </header>
     <section>
-     <p class="error" style="font-size:14px; color: red">${msg }</p>
+     <%--<p class="error" style="font-size:14px; color: red">${msg }</p>--%>
     <form action="<c:url value='/admin/admin/login.do'/>"
         method="post" target="_top">
         <input type="text" name="adminname" value="${admin.adminname }${adminname}" id="adminname"

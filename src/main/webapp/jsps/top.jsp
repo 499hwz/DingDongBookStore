@@ -28,12 +28,12 @@ a {
 	text-transform: none;
 	text-decoration: none;
 	/*color: #ffffff;*/
-	color: gold;
+	color: black;
 	font-weight: normal;
 }
 
 a:hover {
-	color:#fe0;
+	color:gold;
 }
 </style>
 </head>
@@ -51,7 +51,7 @@ a:hover {
         </c:when>
         <c:otherwise>
         &nbsp;&nbsp;&nbsp;&nbsp;
-             叮咚会员：${sessionUser.loginname }&nbsp;&nbsp;|&nbsp;&nbsp;
+             <span style="color: lightcoral;"><strong>叮咚会员：${sessionUser.loginname }</strong>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <a href="<c:url value='/cartItem/myCart.do'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="<c:url value='/order/myOrders.do'/>" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="<c:url value='/jsps/user/pwd.jsp'/>" target="body">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;

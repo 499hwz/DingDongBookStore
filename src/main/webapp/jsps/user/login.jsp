@@ -22,7 +22,7 @@
  <body>
 	<header>
 		<img  height="65px" src="<c:url value='/images/ddlogo1.png'/>">
-		<img src="<c:url value='/images/welcome.png'/>" class="welcome">
+		<img width="100px" src="<c:url value='/images/welcome.png'/>" class="welcome">
 	</header>
 	<section>
 	  <div id="content">
@@ -60,15 +60,16 @@
 				<tr>
 					<td><label class="error" id="verifyCodeError">${errors.verifyCode }</label></td>
 				</tr>
-				<tr>
+
+				<%--<tr>
 					<td>
 						<input type="checkbox" id="chkAuto" name="autoLogin">
 						<label for="chkAuto" class="lbAuto">自动登录</label>
-						<!-- <input type="checkbox" id="chkSafe" name="forgetPwd"> -->
+						&lt;%&ndash;<!-- <input type="checkbox" id="chkSafe" name="forgetPwd"> -->&ndash;%&gt;
 						&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="#" class="forgetPwd">忘记密码?</a>
 					</td>
-				</tr>
+				</tr>--%>
 				<tr>				
 					<td>
 						<input type="submit" id="btnLogin" value="">

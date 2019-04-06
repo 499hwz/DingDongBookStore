@@ -20,10 +20,10 @@
 </head>
 
 <body>
-    <header>
+    <%--<header>
      <img src="<c:url value='/images/ysmall_logo.png'/>">
      <img src="<c:url value='/images/welcome_mdfPwd.png'/>" class="welcome_mdfPwd">
-    </header>
+    </header>--%>
     <!-- <div class="div0">
     	<span>修改密码</span>
     </div>
