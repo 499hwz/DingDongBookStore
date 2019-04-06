@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			    http://www.springframework.org/schema/beans/spring-beans.xsd
+			    http://www.springframework.org/schema/context
+			    http://www.springframework.org/schema/context/spring-context.xsd
+			    http://www.springframework.org/schema/aop
+			    http://www.springframework.org/schema/aop/spring-aop.xsd
+			    http://www.springframework.org/schema/tx
+			    http://www.springframework.org/schema/tx/spring-tx.xsd
+			    http://www.springframework.org/schema/mvc
+			    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+			    http://www.springframework.org/schema/util
+			    http://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- 加载mysql配置文件 -->
+    <util:properties id="dbcp" location="classpath:config.properties"/>
+    <!-- 数据源，可以是dbcp，c3p0，或其他的，以dbcp为例 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="#{dbcp.driverClass}"/>
+        <property name="jdbcUrl" value="#{dbcp.jdbcUrl}"/>
+        <property name="user" value="#{dbcp.user}"/>
+        <property name="password" value="#{dbcp.password}"/>
+    </bean>
+    <!-- 创建sqlSession -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <property name="typeAliasesPackage" value="com.tyust.entity,com.tyust.admin.entity"/>
+    </bean>
+    <!-- 扫描dao包，转换成映射 -->
+    <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.tyust.dao,com.tyust.admin.dao"/>
+    </bean>
+
+</beans>
